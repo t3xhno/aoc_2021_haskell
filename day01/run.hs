@@ -13,5 +13,4 @@ solve f = length . filter (> 0) . f
 
 main = do
     content <- readLines
-    print . solve d1 $ fmap read content
-    print . solve d3 $ fmap read content
+    print $ map ($ fmap read content) [solve d1, solve d3]
